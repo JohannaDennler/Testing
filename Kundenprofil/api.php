@@ -35,7 +35,7 @@ function get_name($user_id) {
         
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         
-        $selectQuery = "SELECT Vorname, Name FROM User WHERE KundenID ='.$user_id;
+        $selectQuery = 'SELECT Vorname, Name FROM User WHERE KundenID ='.$user_id;
         
         $selectStatement = $conn->prepare($selectQuery);
         
@@ -43,8 +43,7 @@ function get_name($user_id) {
         
         if($selectStatement->rowCount()){
             $result = $selectStatement->fetchAll();
-        }else{
-            print "Keine Ergebnisse";
+        }else{ print "Keine Ergebnisse";
         }
 
         $conn = null;
